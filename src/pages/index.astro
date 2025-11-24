@@ -1,11 +1,35 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const apiBase =
+  import.meta.env.PUBLIC_API_BASE || "https://api.margynx.com";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+  <head>
+    <title>Agentix Quantum Cockpit</title>
+  </head>
+  <body class="p-10 font-sans">
+    <h1 class="text-4xl mb-8">Subscribe to Agentix Quantum Cockpit</h1>
+
+    <form action={`${apiBase}/subscription/init`} method="POST" class="flex flex-col gap-4 max-w-md">
+      <input
+        type="text"
+        name="name"
+        placeholder="Your name"
+        required
+        class="border p-2 rounded"
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your email"
+        required
+        class="border p-2 rounded"
+      />
+
+      <button type="submit" class="p-2 bg-blue-600 text-white rounded">
+        Continue with Amazon
+      </button>
+    </form>
+  </body>
+</html>
