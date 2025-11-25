@@ -1,6 +1,6 @@
 ---
 const apiBase =
-  import.meta.env.PUBLIC_API_BASE || "https://api.margynx.com";
+  import.meta.env.PUBLIC_API_BASE || "https://u8uvktk6p6.execute-api.us-east-1.amazonaws.com/prod/start-subscription";
 ---
 
 <html lang="en">
@@ -10,7 +10,7 @@ const apiBase =
   <body class="p-10 font-sans">
     <h1 class="text-4xl mb-8">Subscribe to Agentix Quantum Cockpit</h1>
 
-    <form action={`${apiBase}/subscription/init`} method="POST" class="flex flex-col gap-4 max-w-md">
+    <form action={`${apiBase}/prod/start-subscription`} method="POST" class="flex flex-col gap-4 max-w-md">
       <input
         type="text"
         name="name"
